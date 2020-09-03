@@ -21,6 +21,15 @@
 
 	<dependencies>
 
+<!-- Netflix Hystrix -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+<!--			<artifactId>spring-cloud-starter-hystrix</artifactId>-->
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+
+			<version>1.4.7.RELEASE</version>
+		</dependency>
+
 		<!-- Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -129,15 +138,24 @@
 			<version>4.1.0.Final</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-		<!--		<dependency>-->
-		<!--			<groupId>javax.validation</groupId>-->
-		<!--			<artifactId>validation-api</artifactId>-->
-		<!--			<version>1.1.0.Final</version>-->
-		<!--		</dependency>-->
+
 
 
 	</dependencies>
+
+	<!-- Needed for Netflix Hysterix -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<repositories>
 		<repository>
 			<id>jboss</id>
